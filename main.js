@@ -207,7 +207,7 @@ function getGlobalLoopPosition() {
 
 function ensureSoundLoaded(rarityKey) {
   if (!globalSounds[rarityKey]) {
-    const audio = new Audio(`assets/sounds/${rarityKey}.mp3`);
+    const audio = new Audio(`assets/sounds/${rarityKey}.MP3`);
     audio.loop = true;
     audio.volume = 1.0;
     globalSounds[rarityKey] = audio;
@@ -547,4 +547,5 @@ updateEggPriceDisplay();
 renderIncubator();
 renderField();
 gameLoop();
+
 
