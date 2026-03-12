@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>My Singing Lera :3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="coins">Монеты: <span id="coins">100</span></div>
+  <div class="top-buttons">
+    <button id="save-btn">Сохранить</button>
+    <button id="reset-btn">Сбросить данные</button>
+  </div>
+</header>
+
+<main class="game-layout">
+  <section class="incubator">
+    <h2>Инкубатор</h2>
+    <div id="incubator-slot"></div>
+  </section>
+
+  <section class="field">
+    <h2>Поле</h2>
+    <div id="field-area"></div>
+  </section>
+</main>
+
+<section class="shop" id="shop">
+  <h2>Магазин</h2>
+  <div class="shop-items">
+    <button id="buy-egg">Купить яйцо (100 монет)</button>
+    <button class="buy-decor" data-type="tree">Декор: дерево (500)</button>
+    <button class="buy-decor" data-type="rock">Декор: камень (500)</button>
+    <button class="buy-decor" data-type="bush">Декор: куст (500)</button>
+    <button class="buy-decor" data-type="flower">Декор: цветок (500)</button>
+    <button class="buy-decor" data-type="statue">Декор: статуя (500)</button>
+    <button class="buy-decor" data-type="bed">Декор: кровать (500)</button>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>

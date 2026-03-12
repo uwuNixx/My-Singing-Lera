@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #1b1f2a;
+  color: #fff;
+  user-select: none;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #252b3a;
+}
+
+.top-buttons button {
+  background: #3b4a6b;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.top-buttons button:hover {
+  background: #4f6287;
+}
+
+.game-layout {
+  display: flex;
+  height: calc(100vh - 140px);
+}
+
+.incubator {
+  width: 25%;
+  background: #202534;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.field {
+  flex: 1;
+  background: #161925;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+#field-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.egg-wrapper {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #2a3145;
+  border-radius: 8px;
+}
+
+.egg-img {
+  width: 70px;
+  height: auto;
+}
+
+.egg-timer {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #9bd1ff;
+}
+
+.egg-label {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #d6e4ff;
+  text-align: center;
+}
+
+.monster {
+  position: absolute;
+  cursor: grab;
+  transform-origin: center bottom;
+}
+
+.monster:active {
+  cursor: grabbing;
+}
+
+.monster-img {
+  width: 90px;
+  height: auto;
+  pointer-events: none;
+}
+
+.monster.singing {
+  animation: bounce 0.6s infinite alternate;
+}
+
+.monster-label {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #d6e4ff;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+.shop {
+  padding: 10px 20px;
+  background: #252b3a;
+}
+
+.shop-items button {
+  background: #3b4a6b;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+
+.shop-items button:hover {
+  background: #4f6287;
+}
+
+/* Декор */
+
+.decor {
+  position: absolute;
+  cursor: grab;
+}
+
+.decor-img {
+  width: 80px;
+  height: auto;
+  pointer-events: none;
+}
+
+.delete-glow {
+  filter: brightness(0.4) sepia(1) hue-rotate(-50deg) saturate(5);
+}
