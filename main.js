@@ -407,9 +407,11 @@ function renderField() {
 
     makeDraggable(div, monster);
 
-    if (isGlobalLoopRunning && !activeSounds[monster.rarityKey]) {
+    // НЕ перезапускаем звук, если он уже играет
+    if (audioUnlocked && !activeSounds[monster.rarityKey]) {
       playRaritySound(monster.rarityKey);
     }
+
 
     fieldArea.appendChild(div);
   });
@@ -540,6 +542,30 @@ function buyDecor(type) {
 document.getElementById('reset-btn').addEventListener('click', resetGame);
 document.getElementById('save-btn').addEventListener('click', saveGame);
 buyEggBtn.addEventListener('click', buyEgg);
+let audioUnlocked = false;
+
+function unlockAudio() {
+  if (audioUnlocked) return;
+  audioUnlocked = true;
+
+  // если есть монстры — запускаем цикл
+  if (monsters.length > 0 && !isGlobalLoopRunning) {
+    startGlobalLoop();
+  }
+
+  // включаем звуки всех редкостей, которые должны играть
+  const raritiesOnField = new Set(monsters.map(m => m.rarityKey));
+
+  raritiesOnField.forEach(rarity => {
+    if (!activeSounds[rarity]) {
+      playRaritySound(rarity);
+    }
+  });
+}
+
+// любое взаимодействие пользователя разблокирует звук
+document.addEventListener("click", unlockAudio);
+document.addEventListener("keydown", unlockAudio);
 
 loadGame();
 updateCoinsDisplay();
@@ -547,6 +573,7 @@ updateEggPriceDisplay();
 renderIncubator();
 renderField();
 gameLoop();
+
 
 
 
