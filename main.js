@@ -45,11 +45,11 @@ const buyEggBtn = document.getElementById('buy-egg');
 
 const RARITIES = {
   common:     { name: 'Обычная',     hatchTime: 30,  incomePerSec: 1,  weight: 38 },
-  rare:       { name: 'Редкая',      hatchTime: 60,  incomePerSec: 2,  weight: 25 },
-  ultrarare:  { name: 'Ультраредкая',hatchTime: 100, incomePerSec: 3,  weight: 15 },
-  epic:       { name: 'Эпическая',   hatchTime: 150, incomePerSec: 5,  weight: 10 },
-  mythic:     { name: 'Мифическая',  hatchTime: 200, incomePerSec: 8,  weight: 8 },
-  legendary:  { name: 'Легендарная', hatchTime: 400, incomePerSec: 10, weight: 4 }
+  rare:       { name: 'Редкая',      hatchTime: 60,  incomePerSec: 3,  weight: 25 },
+  ultrarare:  { name: 'Ультраредкая',hatchTime: 100, incomePerSec: 5,  weight: 15 },
+  epic:       { name: 'Эпическая',   hatchTime: 150, incomePerSec: 8,  weight: 10 },
+  mythic:     { name: 'Мифическая',  hatchTime: 200, incomePerSec: 10,  weight: 8 },
+  legendary:  { name: 'Легендарная', hatchTime: 400, incomePerSec: 15, weight: 4 }
 };
 
 // ==========================
@@ -547,5 +547,6 @@ updateEggPriceDisplay();
 renderIncubator();
 renderField();
 gameLoop();
+
 
 
